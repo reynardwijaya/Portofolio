@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="admincss/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('Admincss/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="admincss/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ asset('Admincss/vendor/font-awesome/css/font-awesome.min.css') }}">
     <!-- Custom Font Icons CSS-->
-    <link rel="stylesheet" href="admincss/css/font.css">
+    <link rel="stylesheet" href="{{ asset('Admincss/css/font.css') }}">
     <!-- Google fonts - Muli-->
-    <link rel="stylesheet" href="admincss/https://fonts.googleapis.com/css?family=Muli:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300,400,700">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="admincss/css/style.default.css" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{ asset('Admincss/css/style.default.css') }}" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    <link rel="stylesheet" href="admincss/css/custom.css">
+    <link rel="stylesheet" href="{{ asset('Admincss/css/custom.css') }}">
     <!-- Favicon-->
     <link rel="shortcut icon" href="admincss/img/favicon.ico">
     <!-- Tweaks for older IEs--><!--[if lt IE 9]>

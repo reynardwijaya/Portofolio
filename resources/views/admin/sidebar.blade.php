@@ -4,22 +4,22 @@
     <h3>Dashboard</h3>
   </div>
   <ul class="nav-list">
-    <li class="active">
-      <a href="index.html">
+    <li class="{{ request()->routeIs('admin.home') ? 'active' : '' }}">
+      <a href="{{ route('admin.home') }}">
         <i class="fa-solid fa-house"></i>
         <span>Home</span>
       </a>
     </li>
-    <li>
-      <a href="{{url('post_page')}}">
+    <li class="{{ request()->routeIs('admin.add-post') ? 'active' : '' }}">
+      <a href="{{ route('admin.add-post') }}">
         <i class="fa-solid fa-circle-plus"></i>
         <span>Add Post</span>
       </a>
     </li>
-    <li>
-      <a href="{{url('/show_post')}}">
+    <li class="{{ request()->routeIs('admin.manage-post') ? 'active' : '' }}">
+      <a href="{{ route('admin.manage-post') }}">
         <i class="fa-solid fa-chart-bar"></i>
-        <span>Show Post</span>
+        <span>Manage Post</span>
       </a>
     </li>
   </ul>

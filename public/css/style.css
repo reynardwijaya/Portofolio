@@ -226,15 +226,59 @@ button {
 }
 
 
+/* unified banner section start */
+
+.unified_banner_section {
+    width: 100%;
+    float: left;
+    background-image: url(../images/Hero.png);
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    min-height: 70vh;
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* Special styling for header inside unified banner */
+.unified_banner_section .header_section {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    box-shadow: none;
+}
+
+.unified_banner_section .menu_main li a {
+    color: #ffffff;
+}
+
+.unified_banner_section .menu_main li {
+    color: #ffffff;
+}
+
+.unified_banner_section .navbar-light .navbar-nav .nav-link {
+    color: #ffffff;
+}
+
 /* header section start */
 
 .header_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     height: auto;
-    background-size: 100%;
     padding: 0px 0px 20px 0px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .bg-light {
@@ -245,7 +289,7 @@ button {
     width: 100%;
     float: left;
     text-align: center;
-    padding: 20px 0px 50px 0px;
+    padding: 20px 0px 30px 0px;
 }
 
 .logo_mobile {
@@ -264,7 +308,8 @@ button {
 .navbar-light .navbar-nav .nav-link {
     font-size: 18px;
     text-transform: uppercase;
-    color: #fff;
+    color: #333;
+    font-weight: 500;
 }
 
 .navbar-nav {
@@ -313,19 +358,141 @@ button {
     text-transform: uppercase;
     padding-top: 10px;
     padding-bottom: 10px;
-    color: #fff;
+    color: #333;
     border-radius: 40px;
 }
 
 .menu_main li a {
-    color: #ffffff;
+    color: #333;
     padding: 10px 20px;
     border-radius: 10px;
+    font-weight: 500;
 }
 
 .menu_main li a:hover {
     color: #ffffff;
     background-color: #2b2278;
+}
+
+/* Modern Navbar Styles */
+.modern_navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: transparent;
+}
+
+.navbar_logo .main-logo {
+    height: 35px;
+    width: auto;
+}
+
+.mobile-logo {
+    height: 30px;
+    width: auto;
+}
+
+.navbar_center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav_menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 40px;
+}
+
+.nav_menu li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav_menu li a:hover {
+    color: #f97316;
+    text-decoration: none;
+}
+
+.nav_menu li a.active {
+    color: #f97316;
+    border-bottom: 2px solid #f97316;
+}
+
+.navbar_auth {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.login-btn {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+    color: #f97316;
+    text-decoration: none;
+}
+
+.signup-btn {
+    background-color: #f97316;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #f97316;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: transparent;
+    color: #f97316;
+    text-decoration: none;
+}
+
+.signup-btn-mobile {
+    background-color: #f97316 !important;
+    color: #ffffff !important;
+    border-radius: 8px;
+    padding: 8px 16px !important;
+    margin-left: 10px;
+}
+
+/* Mobile navbar adjustments */
+@media (max-width: 991px) {
+    .modern_navbar {
+        display: none;
+    }
+    
+    .mobile_menu {
+        display: block;
+    }
+    
+    .navbar-nav .nav-link.active {
+        color: #f97316 !important;
+        border-bottom: 2px solid #f97316;
+    }
+}
+
+@media (min-width: 992px) {
+    .mobile_menu {
+        display: none;
+    }
 }
 
 .mb-lg-0,
@@ -337,9 +504,13 @@ button {
 
 .header_main {
     width: 100%;
-    background-image: url("../images/banner-bg.png");
-    background-size: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10px 0px 0px 0px;
+    position: relative;
+    z-index: 1000;
 }
 
 
@@ -353,16 +524,14 @@ button {
 .banner_section {
     width: 100%;
     float: left;
-    padding-bottom: 305px;
+    background: transparent;
+    padding-bottom: 100px;
+      margin-bottom: 50px; 
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
-/* di style.css */
-.banner_section {
-    background-image: url("../images/banner-bg.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
   
 
 .banner_taital {
@@ -377,7 +546,7 @@ button {
 }
 
 .banner_text {
-    width: 63%;
+    width: 90%;
     margin: 0 auto;
     font-size: 16px;
     color: #ffffff;
@@ -408,6 +577,66 @@ button {
     color: #ffffff;
 }
 
+/* Modern Banner Styles */
+.banner_section .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 68vh;
+    text-align: center;
+}
+
+.modern_banner_title {
+    width: 100%;
+    font-size: 84px;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 25px;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.modern_banner_text {
+    width: 100%;
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 35px;
+    line-height: 1.5;
+    font-weight: 400;
+    opacity: 0.95;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.modern_btn_container {
+    text-align: center;
+}
+
+.discover_btn {
+    display: inline-block;
+    background-color: #f97316;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #f97316;
+    transition: all 0.3s ease;
+    text-transform: none;
+}
+
+.discover_btn:hover {
+    background-color: transparent;
+    color: #f97316;
+    text-decoration: none;
+}
+
 
 /* banner section end */
 
@@ -417,7 +646,8 @@ button {
 .services_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
+    padding-bottom: 50px;
+    padding-top: 50px;
 }
 
 .services_taital {
@@ -546,7 +776,8 @@ button {
 .about_section {
     width: 100%;
     float: left;
-    padding-bottom: 90px;
+    padding-bottom: 50px;
+    padding-top: 40px;
 }
 
 .about_taital_main {
@@ -616,78 +847,10 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 100px 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
     background: linear-gradient(to bottom, #ffffff, #ffffff);
 }
-
-.motivation-card {
-    background: white;
-    padding: 40px;
-    max-width: 400px; /* Ubah dari 800px jadi lebih ramping */
-    width: 100%; /* Tambahkan supaya responsif */
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    
-}
-
-.motivation-card h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    font-weight: 800;
-}
-
-.motivation-card p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-}
-
-.skills-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 100px 20px;
-    background-size: cover;
-}
-
-
-.skills-card h2 {
-    font-size: 32px;
-    font-weight: 800;
-    margin-bottom: 30px;
-    text-align: center;
-}
-
-.skill {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-
-.skill span {
-    font-size: 18px;
-    flex: 1;
-}
-
-.dots {
-    display: flex;
-    gap: 6px;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 1.5px solid #000000;
-    background-color: transparent;
-}
-
-.dot.filled {
-    background-color: #686363;
-}
-
 
 
 .blog_taital {
@@ -945,17 +1108,13 @@ button {
 }
 
 /* footer section start */
-
-.footer_section {
-    width: 100%;
-    float: left;
-    background-image: url(../images/footer-bg.png);
-    height: auto;
-    padding-top: 250px;
-    background-size: 100% 100%;
-    padding-bottom: 30px;
-    background-repeat: no-repeat;
+footer {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100vw !important;
 }
+
+
 
 .social_icon {
     width: 100%;
@@ -1023,4 +1182,68 @@ button {
 
 .copyright_text a:hover {
     color: #e27141;
+}
+
+/* Responsive styles for unified banner */
+@media (max-width: 991px) {
+    .unified_banner_section {
+        min-height: 60vh;
+        padding: 0px 0px 40px 0px;
+    }
+    
+    .banner_section {
+        padding-bottom: 150px;
+    }
+    
+    .banner_taital {
+        font-size: 50px;
+    }
+    
+    .modern_banner_title {
+        font-size: 58px;
+        font-weight: 800;
+    }
+    
+    .modern_banner_text {
+        font-size: 18px;
+    }
+    
+    .banner_section .container {
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 767px) {
+    .unified_banner_section {
+        min-height: 50vh;
+        background-size: cover;
+    }
+    
+    .banner_section {
+        padding-bottom: 100px;
+    }
+    
+    .banner_taital {
+        font-size: 35px;
+    }
+    
+    .modern_banner_title {
+        font-size: 42px;
+        font-weight: 800;
+        letter-spacing: -1px;
+    }
+    
+    .modern_banner_text {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .banner_section .container {
+        min-height: 50vh;
+    }
+    
+    .banner_text {
+        width: 90%;
+        font-size: 14px;
+    }
 }

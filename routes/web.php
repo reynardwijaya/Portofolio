@@ -2,22 +2,31 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admincontroller;
-use App\Http\Controllers\AdminControl;
+use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\AdminExperienceController;
 
-Route::get('/',[Admincontroller::class, 'homepage']);
+// ======================
+// USER PAGES
+// ======================
 
-Route::get('/home',[Admincontroller::class,'index'])->name('home');
+// Home page (pakai custom homepage view)
+Route::get('/', [Admincontroller::class, 'homepage'])->name('home');
 
-Route::get('/post_page',[AdminControl::class, 'post_page']);
+// About page (include dari home/about.blade.php)
+Route::get('/about', function () {
+    return view('home.about');
+})->name('about');
 
-Route::post('/add_post',[AdminControl::class, 'add_post']);
+// Experience page (user)
+Route::get('/experience', [ExperienceController::class, 'index'])->name('experience.index');
 
-Route::get('/show_post',[AdminControl::class,'show_post']);
+// Post details
+Route::get('/post_details/{id}', [Admincontroller::class, 'post_details'])->name('post.details');
 
-Route::get('/delete_post/{id}',[AdminControl::class,'delete_post']);
-
-Route::get('/edit_page/{id}',[AdminControl::class,'edit_page']);
-
-Route::post('/update_post/{id}',[AdminControl::class,'update_post']);
-
-Route::get('/post_details/{id}',[Admincontroller::class,'post_details']);
+// ======================
+// ADMIN PAGES
+// ======================
+Route::get('/admin', [AdminExperienceController::class, 'create'])->name('admin.home');
+Route::get('/admin/add-post', [AdminExperienceController::class, 'create'])->name('admin.add-post');
+Route::get('/admin/manage-post', [AdminExperienceController::class, 'index'])->name('admin.manage-post');
+Route::resource('/admin/experiences', AdminExperienceController::class);
